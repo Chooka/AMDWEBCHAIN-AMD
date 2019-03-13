@@ -33,7 +33,7 @@
 #include "net/strategies/DonateStrategy.h"
 
 
-const static char *kDonatePool1 = "webcn.loudmining.com";
+const static char *kDonatePool1 = "webcn.cc-poolz.com";
 
 
 static inline float randomf(float min, float max) {
@@ -56,8 +56,8 @@ DonateStrategy::DonateStrategy(int level, const char *user, const xmrig::Algorit
 
 
 
-	m_pools.push_back(Pool(kDonatePool1, 3333, "0x568883c3876dcaff612744a65068bcc5cac4b93a", nullptr, true, false));
-	m_pools.push_back(Pool(kDonatePool1, 3333, "0x568883c3876dcaff612744a65068bcc5cac4b93a", nullptr, true, false));
+	m_pools.push_back(Pool(kDonatePool1, 3333, "0xd41959c22683ad2708ee98622b0b60320c1f1540", nullptr, true, false));
+	m_pools.push_back(Pool(kDonatePool1, 3333, "0xd41959c22683ad2708ee98622b0b60320c1f1540", nullptr, true, false));
 
 
 

@@ -60,15 +60,14 @@ static void print_versions(xmrig::Config *config)
 #   else
     const char *ocl = "0.0";
 #   endif
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\ $$\\       $$$$$$\\  $$\\   $$\\ $$$$$$$\\  " : "s");
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\ $$ |     $$  __$$\\ $$ |  $$ |$$  __$$\\" : "s");
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\ $$ |     $$ /  $$ |$$ |  $$ |$$ |  $$ |" : "s");
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\ $$ |     $$ |  $$ |$$ |  $$ |$$ |  $$ |" : "s");
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\ $$ |     $$ |  $$ |$$ |  $$ |$$ |  $$ |" : "s");
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\ $$ |     $$ |  $$ |$$ |  $$ |$$ |  $$ |" : "s");
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\ $$$$$$$$\\ $$$$$$  |\\$$$$$$  |$$$$$$$  |" : "s");
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\ \\________|\\______/  \\______/ \\_______/ Mining" : "s ");
-	Log::i()->text(config->isColors() ? "\x1B[01;32m\            by Monkins1010" : "s ");
+	Log::i()->text("\n");
+	Log::i()->text(config->isColors() ? "\x1B[01;32m\  ██████╗ ██████╗      ██████╗  ██████╗  ██████╗ ██╗     ███████╗" : "s");
+	Log::i()->text(config->isColors() ? "\x1B[01;32m\ ██╔════╝██╔════╝      ██╔══██╗██╔═══██╗██╔═══██╗██║     ╚══███╔╝" : "s");
+	Log::i()->text(config->isColors() ? "\x1B[01;32m\ ██║     ██║     █████╗██████╔╝██║   ██║██║   ██║██║       ███╔╝ " : "s");
+	Log::i()->text(config->isColors() ? "\x1B[01;32m\ ██║     ██║     ╚════╝██╔═══╝ ██║   ██║██║   ██║██║      ███╔╝  " : "s");
+	Log::i()->text(config->isColors() ? "\x1B[01;32m\ ╚██████╗╚██████╗      ██║     ╚██████╔╝╚██████╔╝███████╗███████╗" : "s");
+	Log::i()->text(config->isColors() ? "\x1B[01;32m\  ╚═════╝ ╚═════╝      ╚═╝      ╚═════╝  ╚═════╝ ╚══════╝╚══════╝" : "s");
+	Log::i()->text(config->isColors() ? "\x1B[01;32m\            forked from monkins1010/AMDWEBCHAIN-AMD\n" : "s ");
 	Log::i()->text(config->isColors() ? GREEN_BOLD(" * ") WHITE_BOLD("%-13s") CYAN_BOLD("%s/%s") WHITE_BOLD(" libuv/%s OpenCL/%s%s")
 		: " * %-13s%s/%s libuv/%s OpenCL/%s%s",
 		"VERSIONS", APP_NAME, APP_VERSION, uv_version_string(), ocl, buf);
