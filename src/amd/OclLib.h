@@ -27,6 +27,7 @@
 
 #include "3rdparty/CL/cl.h"
 
+#include <vector>
 
 class OclLib
 {
@@ -52,6 +53,9 @@ public:
     static cl_program createProgramWithBinary(cl_context context, cl_uint num_devices, const cl_device_id *device_list, const size_t *lengths, const unsigned char **binaries, cl_int *binary_status, cl_int *errcode_ret);
     static cl_program createProgramWithSource(cl_context context, cl_uint count, const char **strings, const size_t *lengths, cl_int *errcode_ret);
 
+	static std::vector<cl_platform_id> getPlatformIDs();
+	static uint32_t getNumPlatforms();
+	
 private:
     static bool load();
 };

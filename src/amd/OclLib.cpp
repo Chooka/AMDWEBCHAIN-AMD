@@ -246,7 +246,32 @@ cl_int OclLib::getPlatformIDs(cl_uint num_entries, cl_platform_id *platforms, cl
 
     return pGetPlatformIDs(num_entries, platforms, num_platforms);
 }
+std::vector<cl_platform_id> OclLib::getPlatformIDs()
+{
+    const uint32_t count = getNumPlatforms();
+    std::vector<cl_platform_id> platforms(count);
 
+    if (count) {
+        OclLib::getPlatformIDs(count, platforms.data(), nullptr);
+    }
+
+    return platforms;
+}
+uint32_t OclLib::getNumPlatforms()
+{
+    cl_uint count = 0;
+    cl_int ret;
+
+    if ((ret = OclLib::getPlatformIDs(0, nullptr, &count)) != CL_SUCCESS) {
+        LOG_ERR("Error %s when calling clGetPlatformIDs for number of platforms.", OclError::toString(ret));
+    }
+
+    if (count == 0) {
+        LOG_ERR("No OpenCL platform found.");
+    }
+
+    return count;
+}
 
 cl_int OclLib::getPlatformInfo(cl_platform_id platform, cl_platform_info param_name, size_t param_value_size, void *param_value, size_t *param_value_size_ret)
 {
