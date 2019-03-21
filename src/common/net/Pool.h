@@ -38,7 +38,7 @@ class Pool
 public:
     constexpr static const char *kDefaultPassword = "x";
     constexpr static const char *kDefaultUser     = "x";
-	constexpr static const char *kDefaultWorkerId = "LOUD";
+	constexpr static const char *kDefaultWorkerId = "CC-Poolz";
     constexpr static uint16_t kDefaultPort        = 3333;
     constexpr static int kKeepAliveTimeout        = 60;
 
