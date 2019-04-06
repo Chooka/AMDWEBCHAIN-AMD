@@ -604,6 +604,30 @@ void Client::parseNotification(const char *method, const rapidjson::Value &param
 
         return;
     }
+	
+	if (strcmp(method, "message") == 0) {
+		//if(!params.IsObject()){
+			//LOG_WARN("bad params");
+			//return;
+		//}
+		
+		const char* msg = params.GetString();
+		m_listener->onMessage(this, msg);
+		
+		return;
+	}
+	
+	if (strcmp(method, "stats") == 0) {
+		//if(!params.IsObject()){
+			//LOG_WARN("bad params");
+			//return;
+		//}
+		
+		const char* msg = params[0].GetString();
+		m_listener->onMessage(this, msg);
+		
+		return;
+	}
 
     LOG_WARN("[%s] unsupported method: \"%s\"", m_pool.url(), method);
 }

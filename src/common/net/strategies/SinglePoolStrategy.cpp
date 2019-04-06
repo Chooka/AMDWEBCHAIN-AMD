@@ -108,3 +108,7 @@ void SinglePoolStrategy::onResultAccepted(Client *client, const SubmitResult &re
 {
     m_listener->onResultAccepted(this, client, result, error);
 }
+void SinglePoolStrategy::onMessage(Client* client, const char* message)
+{
+	m_listener->onMessage(this,client,message);
+}

@@ -157,6 +157,12 @@ void Network::onResultAccepted(IStrategy *strategy, Client *client, const Submit
     }
 }
 
+void Network::onMessage(IStrategy* strategy, Client* client, const char* message)
+{
+	LOG_NOTICE(isColors() ? "\x1B[01;33mPool Message: %s\x1B[0m"
+                            : "Pool Message: %s",
+                 message);
+}
 
 bool Network::isColors() const
 {

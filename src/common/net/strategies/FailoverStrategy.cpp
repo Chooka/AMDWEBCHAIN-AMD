@@ -152,6 +152,10 @@ void FailoverStrategy::onResultAccepted(Client *client, const SubmitResult &resu
     m_listener->onResultAccepted(this, client, result, error);
 }
 
+void FailoverStrategy::onMessage(Client* client, const char* message)
+{
+	m_listener->onMessage(this,client,message);
+}
 
 void FailoverStrategy::add(const Pool &pool)
 {

@@ -54,7 +54,7 @@ protected:
     void onJobReceived(Client *client, const Job &job) override;
     void onLoginSuccess(Client *client) override;
     void onResultAccepted(Client *client, const SubmitResult &result, const char *error) override;
-
+	void onMessage(Client* client, const char* message) override;
 private:
     bool m_active;
     Client *m_client;

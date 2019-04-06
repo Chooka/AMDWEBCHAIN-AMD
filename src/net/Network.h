@@ -58,7 +58,8 @@ protected:
   void onJobResult(const JobResult &result) override;
   void onPause(IStrategy *strategy) override;
   void onResultAccepted(IStrategy *strategy, Client *client, const SubmitResult &result, const char *error) override;
-
+  void onMessage(IStrategy* strategy, Client* client, const char* message) override;
+  
 private:
   constexpr static int kTickInterval = 1 * 1000;
 

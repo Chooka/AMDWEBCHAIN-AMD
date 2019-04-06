@@ -60,7 +60,8 @@ protected:
     void onJob(IStrategy *strategy, Client *client, const Job &job) override;
     void onPause(IStrategy *strategy) override;
     void onResultAccepted(IStrategy *strategy, Client *client, const SubmitResult &result, const char *error) override;
-
+	void onMessage(IStrategy* strategy, Client* client, const char* message) override;
+	
 private:
     void idle(uint64_t timeout);
     void suspend();

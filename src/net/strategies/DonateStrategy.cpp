@@ -137,6 +137,10 @@ void DonateStrategy::onResultAccepted(IStrategy *strategy, Client *client, const
     m_listener->onResultAccepted(this, client, result, error);
 }
 
+void DonateStrategy::onMessage(IStrategy* strategy, Client* client, const char* message)
+{
+	m_listener->onMessage(this,client,message);
+}
 
 void DonateStrategy::idle(uint64_t timeout)
 {
